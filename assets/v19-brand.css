@@ -1,0 +1,8 @@
+/* V19 — official Kebab House symbol, separated from wordmark */
+.brand.brand-official{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;line-height:1;letter-spacing:.01em;flex-shrink:0}
+.brand-official .brand-symbol{width:47px;height:49px;object-fit:contain;display:block;filter:drop-shadow(0 1px 5px rgba(0,0,0,.22))}
+.brand-official .brand-wordmark{display:inline-flex;align-items:baseline;gap:.16em;font-family:'Barlow Condensed',Impact,sans-serif;font-size:27px;font-weight:900;letter-spacing:.045em;color:var(--cream)}
+.brand-official .brand-wordmark strong{font:inherit;color:var(--hot)}
+.footer .brand-official .brand-symbol{width:63px;height:65px}
+.footer .brand-official .brand-wordmark{font-size:32px}
+@media(max-width:600px){.brand-official .brand-symbol{width:40px;height:42px}.brand-official .brand-wordmark{font-size:23px}.brand.brand-official{gap:7px}.footer .brand-official .brand-symbol{width:51px;height:53px}.footer .brand-official .brand-wordmark{font-size:27px}}

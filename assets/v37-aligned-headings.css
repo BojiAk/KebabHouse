@@ -1,0 +1,43 @@
+/* V37 — aligned secondary-page introductions; menu card indices removed. */
+@media (min-width: 901px) {
+  body.secondary-page .page-head { padding-top: 160px !important; padding-bottom: 62px !important; }
+  body.secondary-page.menu-v36 .menu-v36-main { padding-top: 160px !important; }
+}
+body.secondary-page .page-head .container,
+body.secondary-page.menu-v36 .menu-v36-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+body.secondary-page .page-head .container { min-height: 0 !important; }
+body.secondary-page .page-head .kicker,
+body.secondary-page.menu-v36 .menu-v36-intro .kicker {
+  margin: 0 0 22px !important;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+}
+body.secondary-page .page-head h1,
+body.secondary-page.menu-v36 .menu-v36-intro h1 {
+  font-size: clamp(70px, 8.2vw, 118px) !important;
+  line-height: .92 !important;
+  letter-spacing: .005em !important;
+  margin: 0 0 22px !important;
+  min-height: 2em;
+}
+body.secondary-page .page-head p,
+body.secondary-page.menu-v36 .menu-v36-intro p { margin: 0 !important; }
+body.secondary-page.menu-v36 .menu-v36-intro { margin-bottom: 34px !important; }
+@media (max-width: 900px) {
+  body.secondary-page .page-head { padding-top: 140px !important; }
+  body.secondary-page.menu-v36 .menu-v36-main { padding-top: 140px !important; }
+}
+@media (max-width: 600px) {
+  body.secondary-page .page-head { padding-top: 126px !important; }
+  body.secondary-page.menu-v36 .menu-v36-main { padding-top: 126px !important; }
+  body.secondary-page .page-head h1,
+  body.secondary-page.menu-v36 .menu-v36-intro h1 {
+    font-size: clamp(57px, 12.5vw, 82px) !important;
+    min-height: 2em;
+  }
+}

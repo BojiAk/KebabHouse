@@ -1,0 +1,39 @@
+/* V38 — final responsive/accessibility layer.
+   Kept separate to preserve the approved V37 desktop design. */
+html { -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+img, video, canvas { max-width: 100%; }
+body { overflow-x: clip; }
+:focus-visible { outline: 2px solid #ff7839; outline-offset: 4px; }
+.product-card { cursor: pointer; }
+@media (max-width: 900px) {
+  .container { width: min(100% - 36px, 1200px); }
+  .hero-layout, .split { min-width: 0; }
+  .hero-copy, .hero-art, .float-wrap { min-width: 0; }
+  .footer-row { gap: 22px; flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .container { width: calc(100% - 32px); }
+  .hero-copy .hero-headline { font-size: clamp(48px, 11.7vw, 78px); }
+  .hero-art { height: clamp(310px, 92vw, 430px) !important; }
+  .float-wrap { height: clamp(330px, 98vw, 440px) !important; }
+  .hero .actions, .hunger-actions { flex-wrap: wrap; }
+  .btn { max-width: 100%; text-align: center; }
+  .section h2 { overflow-wrap: normal; }
+  .product-modal-panel { max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); overflow-y: auto; }
+  body.secondary-page .page-head h1,
+  body.secondary-page.menu-v36 .menu-v36-intro h1 {
+    font-size: clamp(45px, 11vw, 72px) !important;
+    min-height: 0;
+    overflow-wrap: break-word;
+  }
+  .footer-links { flex-wrap: wrap; }
+}
+@media (max-width: 380px) {
+  .hero-copy .hero-headline { font-size: clamp(42px, 11.3vw, 52px); }
+  .nav-call { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

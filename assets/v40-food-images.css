@@ -1,0 +1,12 @@
+/* V40: photographic food cards, local images and consistent crop on mobile. */
+.product-card img,.menu-v36-photo img,.gallery img{object-fit:cover;object-position:center center}
+.gallery button{overflow:hidden}
+.gallery button img[src$="calzone-real.png"]{object-position:center 49%;background:#0c0908}
+.gallery button img[src$="pizza-real.png"]{object-position:center 50%}
+.gallery button img[src$="kebab-real.png"]{object-position:center 50%}
+@media(max-width:600px){
+ .menu-v36-photo img,.product-card img{object-fit:cover;object-position:center center}
+ .gallery button{aspect-ratio:1/1;min-height:0}
+ .gallery button img{width:100%;height:100%;object-fit:cover}
+ .gallery button img[src$="calzone-real.png"]{object-position:center 46%}
+}

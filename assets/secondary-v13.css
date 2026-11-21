@@ -1,0 +1,26 @@
+/* V13: restrained refinement on secondary pages only. Home untouched. */
+body.secondary-page .page-head{padding:160px 0 66px;background:radial-gradient(ellipse 55% 90% at 87% 10%,#382014,#100d0b 78%)}
+body.secondary-page .page-head h1{font-size:clamp(66px,9vw,118px);line-height:.92;letter-spacing:.005em;margin:18px 0 22px}
+body.secondary-page .page-head p{max-width:590px;font-size:16px;line-height:1.7}
+body.secondary-page .section{padding:68px 0 105px}
+body.secondary-page .card{background:#1b1512;border:1px solid #ffffff1b;transition:transform .25s,border-color .25s}
+body.secondary-page .card:hover{transform:translateY(-4px);border-color:#ff682c55;box-shadow:none}
+body.secondary-page .card img{height:315px;object-fit:cover}
+body.secondary-page .card-body{padding:26px 25px 28px}
+body.secondary-page .card-body h3{font-size:38px;letter-spacing:.005em;margin:13px 0 7px}
+body.secondary-page .card-body p{line-height:1.65;margin:0}
+body.secondary-page .card .eyeline{letter-spacing:.15em}
+body.secondary-page .note{max-width:750px;line-height:1.6}
+body.secondary-page .split{gap:7%}
+body.secondary-page .photo img{height:520px}
+body.secondary-page .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body.secondary-page .gallery button{border:1px solid #ffffff20;text-align:left}
+body.secondary-page .gallery img{height:360px}
+body.secondary-page .gallery button:hover img{transform:scale(1.025)}
+body.secondary-page .details{gap:9%;align-items:start}
+body.secondary-page .detail{padding:20px 0}
+body.secondary-page .contact-panel{border:1px solid #ffffff20;min-height:400px;padding:36px;background:radial-gradient(circle at 85% 10%,#4a2b1c,#1b1512 70%);display:flex;flex-direction:column;justify-content:space-between}
+body.secondary-page .contact-panel h2{font-size:clamp(55px,6vw,84px)}
+body.secondary-page .page-head .kicker{letter-spacing:.19em}
+@media(max-width:900px){body.secondary-page .gallery{grid-template-columns:1fr 1fr}body.secondary-page .section{padding:55px 0 85px}body.secondary-page .page-head{padding:140px 0 55px}}
+@media(max-width:600px){body.secondary-page .page-head h1{font-size:clamp(61px,13vw,84px)}body.secondary-page .gallery{grid-template-columns:1fr}body.secondary-page .gallery img{height:300px}body.secondary-page .card img{height:280px}body.secondary-page .photo img{height:370px}body.secondary-page .contact-panel{min-height:330px;padding:25px}body.secondary-page .section{padding:45px 0 70px}}

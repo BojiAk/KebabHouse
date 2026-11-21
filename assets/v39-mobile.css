@@ -1,0 +1,75 @@
+/* V39: mobile-first functional refinements; desktop design remains unchanged. */
+.product-card{position:relative;isolation:isolate}
+.product-card-action{position:absolute;inset:0;z-index:8;width:100%;height:100%;border:0;background:transparent;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,114,51,.18);border-radius:inherit}
+.product-card-action:focus-visible{outline:3px solid #ff7839;outline-offset:-4px}
+.product-card:has(.product-card-action:focus-visible){border-color:#ff7839}
+.product-modal{overscroll-behavior:contain}
+.product-modal-panel{overscroll-behavior:contain}
+.product-modal-close{touch-action:manipulation;min-width:44px;min-height:44px}
+.product-card img{object-fit:cover;object-position:center}
+@media (max-width: 900px){
+ .container{width:calc(100% - 36px)!important;max-width:100%}
+ .nav-inner{min-width:0}
+ .nav-links.open{z-index:100}
+ .grid3{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+ .product-modal{padding:12px}
+ .product-modal-panel{max-height:calc(100dvh - 24px);width:100%;grid-template-columns:1fr}
+ .product-modal-image{height:clamp(150px,27dvh,250px);min-height:0}
+ .product-modal-content{padding:22px 20px 28px}
+ .product-modal-content h2{font-size:clamp(35px,9vw,54px)}
+ .product-facts{min-width:0}
+}
+@media (max-width: 600px){
+ html,body{max-width:100%;overflow-x:clip}
+ .container{width:calc(100% - 30px)!important}
+ .nav{max-width:100vw}
+ .brand-symbol{max-width:38px;height:auto}
+ .brand-wordmark{font-size:clamp(15px,4vw,21px)}
+ .nav-toggle{min-width:44px;min-height:44px;touch-action:manipulation}
+ .nav-links a{min-height:44px;display:flex;align-items:center}
+ .hero{overflow:clip}
+ .hero-layout,.split,.grid3{grid-template-columns:1fr!important}
+ .hero-copy{padding-top:0}
+ .hero-copy .hero-headline{font-size:clamp(43px,11.5vw,68px)!important;line-height:.93}
+ .hero-copy .hero-headline span{white-space:nowrap}
+ .hero-caption{font-size:14px;line-height:1.65}
+ .hero-art{height:clamp(270px,82vw,400px)!important}
+ .hero-art canvas,.float-wrap canvas{max-width:none}
+ .float-wrap{height:clamp(300px,88vw,400px)!important}
+ .actions,.hunger-actions{gap:10px;flex-wrap:wrap}
+ .actions .btn,.hunger-actions .btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center}
+ .section{padding-block:clamp(54px,12vw,84px)}
+ .section h2{font-size:clamp(40px,10.5vw,68px);line-height:.95}
+ .card{min-width:0}
+ .card img{width:100%;object-fit:cover}
+ .product-card{transform:none!important}
+ .product-card-action{z-index:20}
+ body.menu-v36 .menu-v36-main{padding:110px 0 62px}
+ body.menu-v36 .menu-v36-intro h1{font-size:clamp(62px,15vw,92px)!important}
+ body.menu-v36 .menu-v36-grid{grid-template-columns:1fr!important;gap:16px}
+ body.menu-v36 .menu-v36-card:last-child{grid-column:auto}
+ body.menu-v36 .menu-v36-photo,body.menu-v36 .menu-v36-card:last-child .menu-v36-photo{aspect-ratio:1.28/1}
+ body.menu-v36 .menu-v36-card-bottom{padding:19px}
+ body.menu-v36 .menu-v36-card h2{font-size:clamp(28px,8vw,40px)}
+ .product-modal{padding:8px;align-items:center}
+ .product-modal-panel{max-height:calc(100dvh - 16px)}
+ .product-modal-image{height:min(25dvh,180px)}
+ .product-modal-content{padding:18px 16px 22px}
+ .product-modal-content h2{font-size:clamp(33px,9vw,47px);margin:8px 0 12px}
+ .product-facts>div{gap:8px;min-width:0}
+ .product-facts strong{overflow-wrap:anywhere}
+ .product-modal-close{right:8px;top:8px}
+ .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px}
+ .gallery button{min-width:0}
+ .gallery img{width:100%;height:100%;object-fit:cover}
+ .footer-row{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+ .footer-links{gap:14px}
+ .contact-panel{max-width:100%;min-width:0}
+}
+@media (max-width: 370px){
+ .container{width:calc(100% - 24px)!important}
+ .hero-copy .hero-headline{font-size:clamp(39px,11vw,48px)!important}
+ .gallery{grid-template-columns:1fr!important}
+}
+@media (hover:none){.product-card:hover{transform:none!important}.product-card-action{touch-action:manipulation}}
+@media (prefers-reduced-motion:reduce){.product-card,.product-card img{transition:none!important}}

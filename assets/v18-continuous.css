@@ -1,0 +1,31 @@
+/* V18 — continuous atmosphere: no hard section edges, no navigation transitions. */
+:root{--v18-base:#100d0b}
+body{background:var(--v18-base)}
+/* Each section starts and ends in the same charcoal; warm illumination lives only in its interior. */
+main>.hero{background:radial-gradient(ellipse 46% 56% at 78% 46%,rgba(104,47,27,.67) 0%,rgba(54,27,19,.4) 48%,transparent 86%),linear-gradient(180deg,#100d0b 0%,#130e0c 33%,#100d0b 100%)!important}
+main>.section,main>.section-alt{background:transparent!important;position:relative;isolation:isolate}
+main>.section::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse 64% 48% at 84% 48%,rgba(74,39,26,.16),transparent 76%);opacity:.8}
+main>.section-alt::before{background:radial-gradient(ellipse 66% 54% at 18% 50%,rgba(85,47,30,.22),transparent 78%)}
+main>.feature{background:radial-gradient(ellipse 55% 49% at 74% 49%,rgba(101,44,24,.58),rgba(47,26,19,.21) 60%,transparent 95%),linear-gradient(180deg,#100d0b 0%,#140e0b 45%,#100d0b 100%)!important;position:relative;isolation:isolate}
+main>.hunger-cta{background:radial-gradient(ellipse 55% 53% at 50% 53%,rgba(108,43,24,.55),rgba(47,25,18,.22) 60%,transparent 95%),linear-gradient(180deg,#100d0b,#160e0b 50%,#100d0b)!important}
+/* Remove the visible horizontal seams and keep the decorative accents sparse. */
+main>section{border-top:0!important;border-bottom:0!important}
+main>.section:nth-of-type(2)::after,main>.section-alt::after{content:"";position:absolute;z-index:-1;right:4%;top:15%;width:min(32vw,430px);height:min(32vw,430px);border:1px solid rgba(239,171,116,.055);border-radius:50%;box-shadow:0 0 0 60px rgba(239,171,116,.014),0 0 0 120px rgba(239,171,116,.008);pointer-events:none}
+/* Secondary pages inherit one uninterrupted canvas. */
+body.secondary-page{background:#100d0b!important}
+body.secondary-page main,body.secondary-page main>section,body.secondary-page main>.page-head,body.secondary-page main>.section{background:transparent!important;background-image:none!important;border:0!important}
+body.secondary-page main{position:relative;isolation:isolate}
+body.secondary-page main::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse 58% 24% at 80% 10%,rgba(102,48,28,.24),transparent 90%),radial-gradient(ellipse 55% 22% at 14% 64%,rgba(75,39,28,.14),transparent 88%)}
+body.secondary-page .page-head{position:relative;isolation:isolate;overflow:hidden}
+body.secondary-page .page-head::before{background:none!important}
+body.secondary-page .section::before{background:radial-gradient(ellipse 55% 65% at 80% 50%,rgba(99,51,29,.12),transparent 90%)}
+body.secondary-page .section::after{content:"";position:absolute;z-index:-1;top:12%;right:7%;width:clamp(150px,24vw,340px);aspect-ratio:1;border:1px solid rgba(231,183,125,.048);border-radius:50%;pointer-events:none}
+body.secondary-page .section:nth-of-type(even)::after{right:auto;left:6%}
+/* Scroll-only subtle motion: no animation on route changes. */
+@media(prefers-reduced-motion:no-preference){
+ main .section-intro.reveal.is-visible,main .split>.reveal.is-visible{transition-duration:.95s}
+ main .card:hover{transform:translateY(-5px)}
+ body.secondary-page .v16-enter{transition-duration:.9s}
+}
+@media(max-width:700px){main>.section:nth-of-type(2)::after,main>.section-alt::after,body.secondary-page .section::after{opacity:.4}main>.hero{background:radial-gradient(ellipse 75% 40% at 75% 55%,rgba(104,47,27,.35),transparent 90%),#100d0b!important}}
+@media(prefers-reduced-motion:reduce){main .card{transition:none!important}}

@@ -1,0 +1,24 @@
+/* V16 — calm charcoal palette, seamless sections, no page navigation transitions. */
+body.secondary-page{background:#100d0b;}
+body.secondary-page .page-head{background:#100d0b!important;position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.075)}
+body.secondary-page .page-head::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,transparent 28%,rgba(255,255,255,.018) 62%,transparent 88%)}
+body.secondary-page .section,body.secondary-page section,body.secondary-page main{background-color:#100d0b!important;background-image:none!important;}
+body.secondary-page .section{position:relative;border-top:1px solid rgba(255,255,255,.055)}
+body.secondary-page .section:first-of-type{border-top:0}
+body.secondary-page .contact-panel{background:#1b1512!important;box-shadow:0 18px 55px rgba(0,0,0,.15)}
+body.secondary-page .card{box-shadow:0 14px 34px rgba(0,0,0,.14)}
+/* Motion is local to content; never animate whole pages or navigation. */
+@media(prefers-reduced-motion:no-preference){
+ body.secondary-page .page-head .kicker{animation:v16-rise .65s cubic-bezier(.2,.75,.2,1) both}
+ body.secondary-page .page-head h1{animation:v16-rise .8s .09s cubic-bezier(.2,.75,.2,1) both}
+ body.secondary-page .page-head p{animation:v16-rise .85s .19s cubic-bezier(.2,.75,.2,1) both}
+ body.secondary-page .v16-enter{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+ body.secondary-page .v16-enter.v16-in{opacity:1;transform:translateY(0)}
+ body.secondary-page .v16-enter[data-v16-delay="1"]{transition-delay:90ms}
+ body.secondary-page .v16-enter[data-v16-delay="2"]{transition-delay:180ms}
+ body.secondary-page .v16-enter[data-v16-delay="3"]{transition-delay:270ms}
+ body.secondary-page .gallery img,body.secondary-page .card img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+ body.secondary-page .gallery button:hover img{transform:scale(1.055)}
+ @keyframes v16-rise{from{opacity:0;transform:translateY(23px)}to{opacity:1;transform:translateY(0)}}
+}
+@media(prefers-reduced-motion:reduce){body.secondary-page .v16-enter{opacity:1!important;transform:none!important}}

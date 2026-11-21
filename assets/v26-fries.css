@@ -1,0 +1,14 @@
+/* V27 — accents belong to the product section, not a separate strip. */
+.fries-showcase{position:relative;isolation:isolate;overflow:hidden}
+.fries-showcase>.container{position:relative;z-index:2}
+.fries-accents{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.fries-accent{position:absolute;display:block;width:clamp(92px,10vw,180px);height:auto;object-fit:contain;opacity:0;transform:rotate(var(--angle)) scale(var(--scale));transform-origin:center;filter:drop-shadow(0 13px 17px rgba(0,0,0,.65));will-change:opacity;user-select:none}
+/* deliberately staggered, placed around the OUTER gutters rather than over the cards */
+.fries-a{left:1.4%;top:19%;--angle:-32deg;--scale:.92}
+.fries-b{left:5.7%;top:57%;--angle:65deg;--scale:.66}
+.fries-c{right:4%;top:8%;--angle:42deg;--scale:1.08}
+.fries-d{right:1.6%;top:52%;--angle:-46deg;--scale:.88}
+.fries-e{right:8%;top:81%;--angle:95deg;--scale:.57}
+@media(min-width:1000px) and (max-width:1550px){.fries-accent{width:clamp(85px,9vw,140px)}.fries-a{left:0}.fries-b{left:2%}.fries-c{right:1%}.fries-d{right:0}.fries-e{right:3%}}
+@media(max-width:1150px){.fries-accents{display:none}}
+@media(prefers-reduced-motion:reduce){.fries-accent{will-change:auto;opacity:.85!important}}

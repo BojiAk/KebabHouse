@@ -1,0 +1,23 @@
+/* V20 — remove decorative circles; use a quiet editorial light treatment. */
+/* One continuous dark canvas across sections; no page-to-page transitions. */
+body,body.secondary-page{background:#100d0b!important}
+main>.section,main>.section-alt,body.secondary-page main>section{background-color:transparent!important}
+/* Remove ring pseudo-elements introduced in V18. */
+main>.section:nth-of-type(2)::after,main>.section-alt::after,
+body.secondary-page .section::after{content:none!important;display:none!important;box-shadow:none!important}
+/* Replace circular decorative light pools with restrained vertical tonal shifts. */
+main>.section::before,main>.section-alt::before,
+body.secondary-page .section::before{background:linear-gradient(180deg,transparent 0%,rgba(71,43,31,.075) 48%,transparent 100%)!important;opacity:1!important}
+body.secondary-page main::before{background:linear-gradient(180deg,rgba(52,33,25,.16) 0%,transparent 26%,transparent 74%,rgba(52,33,25,.10) 100%)!important}
+/* Hero/3D feature: keep the existing model framing and natural warm light, but no visible rings. */
+main>.hero{background:linear-gradient(180deg,#100d0b 0%,#1d120e 50%,#100d0b 100%)!important}
+main>.feature{background:linear-gradient(180deg,#100d0b 0%,#1a110e 48%,#100d0b 100%)!important}
+/* Hunger CTA: typography-led closing panel instead of a circular halo. */
+main>.hunger-cta{background:linear-gradient(180deg,#100d0b 0%,#20140f 43%,#24150f 58%,#100d0b 100%)!important;isolation:isolate}
+.hunger-ambient{display:none!important}
+main>.hunger-cta::before{content:''!important;position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 20%,rgba(255,137,76,.045) 50%,transparent 78%),url('noise.svg')!important;background-size:auto,180px 180px;opacity:.42!important}
+main>.hunger-cta::after{content:'KEBAB HOUSE';position:absolute;z-index:-1;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;font-size:clamp(115px,22vw,370px);letter-spacing:.035em;white-space:nowrap;color:rgba(255,240,221,.025);pointer-events:none;user-select:none}
+/* Keep the CTA fully legible and no horizontal overflows on phones. */
+main>.hunger-cta{overflow:hidden}
+@media(max-width:700px){main>.hero{background:linear-gradient(180deg,#100d0b,#1a110e 52%,#100d0b)!important}main>.hunger-cta::after{font-size:34vw;letter-spacing:0}}
+@media(prefers-reduced-motion:reduce){main>.hunger-cta::after{transition:none!important}}

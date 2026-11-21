@@ -1,0 +1,9 @@
+/* V31: keep V30 home layout, remove image placeholder flash. */
+.hero-photo-stage > .model-fallback{display:none!important}
+/* Secondary pages: clean editorial layout without decorative motifs. */
+body.secondary-page .page-head{background:#100d0b!important;overflow:hidden}
+body.secondary-page .page-head .container{position:relative;isolation:isolate}
+body.secondary-page .page-head .container>.kicker,body.secondary-page .page-head h1,body.secondary-page .page-head p{max-width:100%;position:relative;z-index:2}
+body.secondary-page .v31-main-section{position:relative;background:#100d0b!important}
+body.secondary-page .v31-main-section::before{content:"";position:absolute;top:0;left:50%;width:min(72%,860px);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#a66a463b,transparent)}
+body.secondary-page .v31-main-section::after{content:"";position:absolute;right:3%;bottom:6%;width:70px;height:70px;border-right:1px solid #e88b5126;border-bottom:1px solid #e88b5126;transform:rotate(-9deg);pointer-events:none}
